@@ -80,19 +80,24 @@
 
 .datepicker-active,
 .datepicker-today {
-    background-color: #0044CC;
-    background-image: -moz-linear-gradient(center top , #0088CC, #0044CC);
     background-repeat: repeat-x;
     border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
     color: #FFFFFF;
     text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
 }
+.datepicker-today {
+    background-color: #49afcd;
+    background-image: -moz-linear-gradient(top, #5bc0de, #2f96b4);
+    background-image: -webkit-linear-gradient(top, #5bc0de, #2f96b4);
+}
+.datepicker-active {
+    background-color: #0044CC;
+    background-image: -moz-linear-gradient(center top , #0088CC, #0044CC);
+    background-image: -webkit-linear-gradient(center top , #0088CC, #0044CC);
+}
 
 a.datepicker-week-end {
     background-color: #ddd;
-}
-.datepicker-other-month {
-
 }
 .datepicker-cmd-clear {
     float: left;

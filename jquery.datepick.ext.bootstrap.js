@@ -44,6 +44,29 @@
         // ThemeRoller template for generating a datepicker.
         bootStrapRenderer: bootStrapRenderer,
 
+        selectRangeOnHover: function (date, selectable) {
+            var datePicker,
+                daysToHighlight;
+
+            if (!selectable) return;
+
+            datePicker = $(this).data('datepick');
+            if (!datePicker.pickingRange) return;
+
+            var startDate = datePicker.selectedDates[0];
+            daysToHighlight = date.getNightsBetween(startDate);
+            if (daysToHighlight >= 0) {
+                $(this).find('.datepicker-active').removeClass('datepicker-active');
+
+                for (var idx = 0; idx <= daysToHighlight; idx++) {
+                    var d = startDate.clone().add(idx).days();
+                    var dateCellClass = '.dp' + d.getTime();
+
+                    $(this).find(dateCellClass + ':not(.datepicker-other-month)').addClass('datepicker-active');
+                }
+            }
+        },
+
         /* Change the first day of the week by clicking on the day header.
          Usage: onShow: $.datepick.changeFirstDay.
          @param  picker  (jQuery) the completed datepicker division

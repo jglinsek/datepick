@@ -12,6 +12,10 @@
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
     <script type="text/javascript" src="jquery.datepick.js"></script>
     <script type="text/javascript" src="jquery.datepick.ext.bootstrap.js"></script>
+
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/datejs/1.0/date.min.js"></script>
+    <script type="text/javascript" src="date.ext.js"></script>
+
     <script type="text/javascript">
         $(function () {
             $('#popupDatepicker').datepick({
@@ -28,7 +32,8 @@
                 prevText: '<i title="Previous" class="icon-arrow-left"></i>',
                 nextText: '<i title="Next" class="icon-arrow-right"></i>',
                 monthsToShow: [2, 3],
-                rangeSelect: true
+                rangeSelect: true,
+                onShow: $.datepick.hoverCallback($.datepick.selectRangeOnHover)
             });
         });
 
