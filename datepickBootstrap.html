@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>jQuery Datepicker - Bootstrap</title>
+
+    <link type="text/css" href="jquery.datepick.bootstrap.css" rel="stylesheet">
+    <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="jquery.datepick.js"></script>
+    <script type="text/javascript" src="jquery.datepick.ext.bootstrap.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('#popupDatepicker').datepick({
+                renderer: $.datepick.bootStrapRenderer,
+                prevText: '<i title="Previous" class="icon-arrow-left"></i>',
+                nextText: '<i title="Next" class="icon-arrow-right"></i>',
+                showTrigger: '<button class="btn"><i class="icon-calendar"></i></button>',
+                showAnim: 'fadeIn',
+                showSpeed: 'fast'
+            });
+            $('#inlineDatepicker').datepick({
+                onSelect: showDate,
+                renderer: $.datepick.bootStrapRenderer,
+                prevText: '<i title="Previous" class="icon-arrow-left"></i>',
+                nextText: '<i title="Next" class="icon-arrow-right"></i>',
+                monthsToShow: [2, 3],
+                rangeSelect: true
+            });
+        });
+
+        function showDate(date) {
+            console.log('The date chosen is ' + date);
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>jQuery Datepicker</h1>
+
+        <p>This page demonstrates the very basics of the
+            <a href="http://keith-wood.name/datepick.html">jQuery Datepicker plugin</a>
+            within the context of <a href="http://twitter.github.com/bootstrap/">Bootstrap</a>.
+            It contains the minimum requirements for using the plugin and
+            can be used as the basis for your own experimentation.</p>
+
+        <p>For more detail see the <a href="http://keith-wood.name/datepickRef.html">documentation reference</a> page.</p>
+
+        <p>
+            A popup datepicker
+            <!--<input type="text" id="popupDatepicker">-->
+            <div class="input-append">
+              <input class="span2" id="popupDatepicker" type="text">
+            </div>
+        </p>
+
+        <p>Or inline</p>
+
+        <div id="inlineDatepicker"></div>
+    </div>
+</body>
+</html>

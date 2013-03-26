@@ -1,0 +1,102 @@
+.datepick-popup {
+    z-index: 1000;
+    padding: 3px;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding;
+    background-clip: padding-box;
+}
+
+.datepicker-cmd {
+    display: block;
+    border: medium none;
+    border-radius: 4px 4px 4px 4px;
+    min-height: 20px;
+    text-align: center;
+    padding: 4px 15px;
+}
+.table-condensed.datepicker-calendar td {
+    padding: 1px;
+}
+.datepicker-calendar td span,
+.datepicker-calendar td a {
+    border-radius: 4px 4px 4px 4px;
+    display: block;
+    padding: 4px 5px;
+    text-align: right;
+}
+.datepicker-calendar td span {
+    color: #eee;
+}
+
+.datepicker-cmd:hover,
+.datepicker-calendar td a:hover {
+    background: #eeeeee;
+    cursor: pointer;
+}
+.datepicker-cmd-prev {
+    display: inline-block;
+    float: left;
+}
+.datepicker-cmd-today {
+    display: inline-block;
+}
+.datepicker-cmd-next {
+    display: inline-block;
+    float: right;
+}
+.datepicker-nav-header {
+    text-align: center;
+    padding-bottom: 5px;
+    border-bottom: solid thin #eee;
+}
+.datepicker-nav-footer {
+    margin-top: 10px;
+    padding: 10px 10px 5px 10px;
+    border-top: solid thin #eee;
+}
+.datepick-month-year {
+    width: auto;
+}
+.datepicker-group {
+    display: inline-table;
+    padding: 0 10px;
+    text-align: center;
+}
+.datepicker-header {
+    font-weight: bold;
+    font-size: 1.1em;
+    height: 35px;
+    padding: 1px;
+}
+
+.datepicker-active,
+.datepicker-today {
+    background-color: #0044CC;
+    background-image: -moz-linear-gradient(center top , #0088CC, #0044CC);
+    background-repeat: repeat-x;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    color: #FFFFFF;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+
+a.datepicker-week-end {
+    background-color: #ddd;
+}
+.datepicker-other-month {
+
+}
+.datepicker-cmd-clear {
+    float: left;
+}
+.datepicker-cmd-close {
+    float: right;
+}
