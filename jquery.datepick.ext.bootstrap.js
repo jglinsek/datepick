@@ -48,24 +48,33 @@ https://github.com/jglinsek
         bootStrapRenderer: bootStrapRenderer,
 
         selectRangeOnHover: function (date, selectable) {
-            var datePicker,
-                daysToHighlight;
+            var $this,
+                $datePicker,
+                daysToHighlight,
+                startDate,
+                renderer;
 
             if (!selectable) return;
 
-            datePicker = $(this).data('datepick');
-            if (!datePicker.pickingRange) return;
 
-            var startDate = datePicker.selectedDates[0];
+            $this = $(this);
+            $datePicker = $this.data('datepick');
+            if (!$datePicker.pickingRange) return;
+
+            startDate = $datePicker.selectedDates[0];
             daysToHighlight = date.getNightsBetween(startDate);
+            renderer = $datePicker.options.renderer;
+
             if (daysToHighlight >= 0) {
-                $(this).find('.datepicker-active').removeClass('datepicker-active');
+                $this.find('.' + renderer.selectedClass)
+                    .removeClass(renderer.selectedClass);
 
                 for (var idx = 0; idx <= daysToHighlight; idx++) {
                     var d = startDate.clone().add(idx).days();
                     var dateCellClass = '.dp' + d.getTime();
 
-                    $(this).find(dateCellClass + ':not(.datepicker-other-month)').addClass('datepicker-active');
+                    $this.find(dateCellClass + ':not(.' + renderer.otherMonthClass +')')
+                        .addClass(renderer.selectedClass);
                 }
             }
         },
